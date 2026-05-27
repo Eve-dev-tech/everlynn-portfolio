@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Star, Code2, Map } from 'lucide-react'
 import { achievements } from '@/lib/data/achievements'
 
-const iconMap: Record<string, React.FC<{size?:number;color?:string}>> = { Star, Code2, Map }
+const iconMap: Record<string, React.ElementType> = { Star, Code2, Map }
 
 export default function Achievements() {
   return (

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Search, Users, TrendingDown, Repeat, BarChart2, Lightbulb, ArrowRight, Zap } from 'lucide-react'
 import { services } from '@/lib/data/services'
 
-const iconMap: Record<string, React.FC<{size?:number;color?:string}>> = { Search, Users, TrendingDown, Repeat, BarChart2, Lightbulb }
+const iconMap: Record<string, React.ElementType> = { Search, Users, TrendingDown, Repeat, BarChart2, Lightbulb }
 const tierColor: Record<string, string> = { Starter:'var(--text2)', Core:'var(--teal)', Growth:'var(--gold)', Custom:'var(--text2)' }
 
 export default function Services() {

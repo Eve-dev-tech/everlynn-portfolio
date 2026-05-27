@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Briefcase, GraduationCap, Rocket } from 'lucide-react'
 import { experiences } from '@/lib/data/experience'
 
-const typeIcon: Record<string, React.FC<{size?:number;color?:string}>> = { startup: Rocket, 'full-time': Briefcase, education: GraduationCap, freelance: Briefcase }
+const typeIcon: Record<string, React.ElementType> = { startup: Rocket, 'full-time': Briefcase, education: GraduationCap, freelance: Briefcase }
 const typeColor: Record<string, string> = { startup: 'var(--teal)', 'full-time': 'var(--text2)', education: 'var(--gold)', freelance: 'var(--text2)' }
 
 export default function Experience() {

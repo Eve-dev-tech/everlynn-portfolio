@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Code2, Brain, MessageSquare } from 'lucide-react'
 import { skillGroups } from '@/lib/data/skills'
 
-const iconMap: Record<string, React.FC<{size?:number;color?:string}>> = { Code2, Brain, MessageSquare }
+const iconMap: Record<string, React.ElementType> = { Code2, Brain, MessageSquare }
 
 function SkillBar({ name, level, delay }: { name: string; level: number; delay: number }) {
   return (
