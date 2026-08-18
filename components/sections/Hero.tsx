@@ -56,19 +56,18 @@ export default function Hero() {
         {/* Main headline */}
         <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
           style={{ fontSize: 'clamp(2.4rem, 6vw, 5rem)', fontWeight: 800, lineHeight: 1.08, marginBottom: 28, maxWidth: 860 }}>
-          I Turn Customer{' '}
-          <span className="grad-text">Behavior</span>
-          <br />Into Business Strategy.
+          The Customer Is King.
+          <br />Who, Then, Is The <span className="grad-text">Best</span> Customer For Your Business?
         </motion.h1>
 
         {/* Sub */}
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-          style={{ fontSize: 'clamp(1rem, 2vw, 1.18rem)', color: 'var(--text2)', maxWidth: 600, lineHeight: 1.85, marginBottom: 20 }}>
-          Behavioral Data Strategist with an MIT MicroMasters and experience across M-Pesa Africa, multiple startups, and independent analytics consulting.
+          style={{ fontSize: 'clamp(1rem, 2vw, 1.18rem)', color: 'var(--text2)', maxWidth: 600, lineHeight: 1.85, marginBottom: 16 }}>
+          That is a customer who is valuable, profitable, and the fuel for your business growth engine. Pinpoint this high-value customer with the power of data science.
         </motion.p>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }}
           style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.1rem)', color: 'var(--text2)', maxWidth: 600, lineHeight: 1.85, marginBottom: 40 }}>
-          I help businesses understand <em style={{ color: 'var(--text)', fontStyle: 'normal', fontWeight: 500 }}>why customers buy, stay, and leave</em> — and build the data strategy to act on it.
+          An understanding of <em style={{ color: 'var(--text)', fontStyle: 'normal', fontWeight: 500 }}>who your real customers are — why they buy, stay, and leave</em> — empowers you to make more informed business decisions.
         </motion.p>
 
         {/* Dual CTA — hire + co-create clearly stated */}

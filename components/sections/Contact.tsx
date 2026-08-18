@@ -6,8 +6,7 @@ import { Send, Mail, Linkedin, Github } from 'lucide-react'
 import toast from 'react-hot-toast'
 
 type FormData = {
-  name: string; email: string; company?: string
-  enquiryType: string; budget?: string; message: string; source?: string
+  challenge: string; triedAlready: string; whyNow: string; email: string
 }
 
 export default function Contact() {
@@ -86,56 +85,28 @@ export default function Contact() {
           <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
             <div className="card" style={{ padding: '36px 32px' }}>
               <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
-                  <div>
-                    <label style={{ display: 'block', fontSize: 13, color: 'var(--text2)', marginBottom: 6, fontWeight: 500 }}>Name *</label>
-                    <input {...register('name', { required: true })} {...inp} placeholder="Your name" />
-                    {errors.name && <span style={{ color: '#f87171', fontSize: 12, marginTop: 4, display: 'block' }}>Required</span>}
-                  </div>
-                  <div>
-                    <label style={{ display: 'block', fontSize: 13, color: 'var(--text2)', marginBottom: 6, fontWeight: 500 }}>Email *</label>
-                    <input {...register('email', { required: true })} {...inp} type="email" placeholder="you@company.com" />
-                    {errors.email && <span style={{ color: '#f87171', fontSize: 12, marginTop: 4, display: 'block' }}>Required</span>}
-                  </div>
+                <div>
+                  <label style={{ display: 'block', fontSize: 13, color: 'var(--text2)', marginBottom: 6, fontWeight: 500 }}>1. What is the biggest challenge you're trying to solve right now? *</label>
+                  <textarea {...register('challenge', { required: true })} {...inp} rows={3} placeholder="e.g. We don't know why customers are churning" style={{ resize: 'vertical' }} />
+                  {errors.challenge && <span style={{ color: '#f87171', fontSize: 12, marginTop: 4, display: 'block' }}>Required</span>}
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: 13, color: 'var(--text2)', marginBottom: 6, fontWeight: 500 }}>Company / Organisation</label>
-                  <input {...register('company')} {...inp} placeholder="Optional" />
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
-                  <div>
-                    <label style={{ display: 'block', fontSize: 13, color: 'var(--text2)', marginBottom: 6, fontWeight: 500 }}>Enquiry Type *</label>
-                    <select {...register('enquiryType', { required: true })} {...inp} style={{ cursor: 'pointer' }}>
-                      <option value="">Select...</option>
-                      <option>Project Consultation</option>
-                      <option>Dashboard Build</option>
-                      <option>Strategic Advisory</option>
-                      <option>Job Opportunity</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label style={{ display: 'block', fontSize: 13, color: 'var(--text2)', marginBottom: 6, fontWeight: 500 }}>Budget Range</label>
-                    <select {...register('budget')} {...inp} style={{ cursor: 'pointer' }}>
-                      <option value="">Select...</option>
-                      <option>Under $500</option>
-                      <option>$500 – $2,000</option>
-                      <option>$2,000+</option>
-                      <option>Let's discuss</option>
-                    </select>
-                  </div>
+                  <label style={{ display: 'block', fontSize: 13, color: 'var(--text2)', marginBottom: 6, fontWeight: 500 }}>2. What have you tried?  *</label>
+                  <textarea {...register('triedAlready', { required: true })} {...inp} rows={3} placeholder="e.g. In-house dashboards, another consultant, nothing yet..." style={{ resize: 'vertical' }} />
+                  {errors.triedAlready && <span style={{ color: '#f87171', fontSize: 12, marginTop: 4, display: 'block' }}>Required</span>}
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: 13, color: 'var(--text2)', marginBottom: 6, fontWeight: 500 }}>Message *</label>
-                  <textarea {...register('message', { required: true, maxLength: 500 })} {...inp} rows={5} placeholder="Tell me about your project, your data challenges, or what you're trying to understand about your customers..." style={{ resize: 'vertical' }} />
-                  {errors.message && <span style={{ color: '#f87171', fontSize: 12, marginTop: 4, display: 'block' }}>Required (max 500 chars)</span>}
+                  <label style={{ display: 'block', fontSize: 13, color: 'var(--text2)', marginBottom: 6, fontWeight: 500 }}>3. Why is now the right time to address this? *</label>
+                  <textarea {...register('whyNow', { required: true })} {...inp} rows={3} placeholder="e.g. We're scaling and can't afford to keep guessing" style={{ resize: 'vertical' }} />
+                  {errors.whyNow && <span style={{ color: '#f87171', fontSize: 12, marginTop: 4, display: 'block' }}>Required</span>}
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: 13, color: 'var(--text2)', marginBottom: 6, fontWeight: 500 }}>How did you find me?</label>
-                  <input {...register('source')} {...inp} placeholder="LinkedIn, referral, Google..." />
+                  <label style={{ display: 'block', fontSize: 13, color: 'var(--text2)', marginBottom: 6, fontWeight: 500 }}>4. Your email *</label>
+                  <input {...register('email', { required: true })} {...inp} type="email" placeholder="you@company.com" />
+                  {errors.email && <span style={{ color: '#f87171', fontSize: 12, marginTop: 4, display: 'block' }}>Required</span>}
                 </div>
                 <button type="submit" disabled={loading} className="btn btn-p" style={{ justifyContent: 'center', opacity: loading ? 0.7 : 1 }}>
-                  {loading ? 'Sending...' : <><Send size={15} /> Send Message</>}
+                  {loading ? 'Sending...' : <><Send size={15} /> Submit</>}
                 </button>
               </form>
             </div>

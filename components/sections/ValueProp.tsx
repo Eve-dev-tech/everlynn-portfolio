@@ -1,11 +1,11 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Brain, TrendingUp, Target } from 'lucide-react'
+import { Zap, Target, Eye } from 'lucide-react'
 
 const cards = [
-  { icon: Brain, title: 'Customer Intelligence', body: "I decode why customers behave the way they do — using data, psychology, and systems thinking to answer questions your dashboards can't.", accent: 'var(--teal)' },
-  { icon: TrendingUp, title: 'Predictive Strategy', body: "From churn risk to purchase prediction, I build models that forecast behavior so you can act before problems become revenue losses.", accent: 'var(--teal)' },
-  { icon: Target, title: 'Decision-Ready Insights', body: "I translate complex data into clear strategic recommendations. No jargon. Just the insight your leadership team needs to act with confidence.", accent: 'var(--gold)' },
+  { icon: Zap, title: 'Supercharge Sales', body: "Customer behaviour analysis offers insights that extend beyond retaining your current customer base. It equips you to attract and convert new high-value customers more effectively. This alignment drives business value by providing your target audience precisely what they seek, and encourages repeat business.", accent: 'var(--teal)' },
+  { icon: Target, title: 'Sharpen Marketing Strategy', body: "A deeper understanding allows for precise customer segmentation based on behavioral trends rather than just demographics. A strong grasp of these trends allows you to discern patterns in how customers shop, utilize your services, or engage with your brand. This helps you discover which marketing campaigns or value propositions resonate most effectively.", accent: 'var(--teal)' },
+  { icon: Eye, title: 'Predict', body: "Ask yourself: are there specific times, seasons, or periods when customers are more likely to purchase? At which stage of your customer journey do customers tend to churn? By identifying the specific behaviors characteristic of your high-value customers, you can predict which prospective customers are likely to follow similar patterns. This foresight enables you to proactively deliver a customer experience designed to nurture potentially loyal customers from their very first interaction, and to maximize customer lifetime value.", accent: 'var(--gold)' },
 ]
 
 export default function ValueProp() {
@@ -14,12 +14,12 @@ export default function ValueProp() {
       <div className="wrap">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
           style={{ textAlign: 'center', marginBottom: 60 }}>
-          <span className="lbl">What I Deliver</span>
+          <span className="lbl">Value For Your Money</span>
           <h2 style={{ fontSize: 'clamp(1.8rem,4vw,2.8rem)', marginBottom: 16 }}>
-            Not just data. <span className="grad-text">Decisions.</span>
+            Better Business <span className="grad-text">Outcomes.</span>
           </h2>
           <p style={{ color: 'var(--text2)', maxWidth: 520, margin: '0 auto', fontSize: 17 }}>
-            Most companies have data. Few have clarity. I bridge that gap.
+            Optimize your operations to increase efficiency and profitability.
           </p>
         </motion.div>
 
