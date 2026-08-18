@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Github, ExternalLink, BarChart2, ImageOff } from 'lucide-react'
 import { projects } from '@/lib/data/projects'
+import { dashboards } from '@/lib/data/dashboards'
 
 export default function Projects() {
   const [tab, setTab] = useState<'code'|'dashboards'>('code')

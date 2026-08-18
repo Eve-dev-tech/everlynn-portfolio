@@ -8,6 +8,8 @@ import Services from '@/components/sections/Services'
 import Projects from '@/components/sections/Projects'
 import Skills from '@/components/sections/Skills'
 import Experience from '@/components/sections/Experience'
+import Clients from '@/components/sections/Clients'
+import Testimonials from '@/components/sections/Testimonials'
 import Achievements from '@/components/sections/Achievements'
 import BlogTeasers from '@/components/sections/BlogTeasers'
 import BookSession from '@/components/sections/BookSession'
@@ -26,6 +28,8 @@ export default function Home() {
         <Projects />
         <Skills />
         <Experience />
+        <Clients />
+        <Testimonials />
         <Achievements />
         <BlogTeasers />
         <BookSession />
