@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Github, ExternalLink, BarChart2, ImageOff } from 'lucide-react'
+import { Github, ExternalLink, BarChart2 } from 'lucide-react'
 import { projects } from '@/lib/data/projects'
 import { dashboards } from '@/lib/data/dashboards'
 
@@ -82,19 +82,21 @@ export default function Projects() {
         {tab === 'dashboards' && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
-              {[1, 2, 3].map(n => (
-                <div key={n} className="card" style={{ padding: '40px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 14, minHeight: 260, textAlign: 'center' }}>
-                  <ImageOff size={40} color="var(--border2)" />
-                  <div>
-                    <p style={{ fontFamily: 'var(--font-sora)', fontWeight: 700, fontSize: 15, marginBottom: 6 }}>Dashboard Coming Soon</p>
-                    <p style={{ color: 'var(--text2)', fontSize: 13, lineHeight: 1.7 }}>Add your Power BI screenshot to<br /><span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--teal)' }}>public/images/dashboards/</span></p>
+              {dashboards.map((d, i) => (
+                <motion.div key={d.id} className="card" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
+                  style={{ overflow: 'hidden' }}>
+                  <div style={{ aspectRatio: '16/9', background: 'var(--bg)', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', position: 'relative' }}>
+                    <img src={`/images/dashboards/${d.imageFile}`} alt={d.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
                   </div>
-                </div>
+                  <div style={{ padding: '24px 24px 28px' }}>
+                    <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 10, fontFamily: 'var(--font-sora)' }}>{d.title}</h3>
+                    <p style={{ color: 'var(--text2)', fontSize: 14, lineHeight: 1.75 }}>{d.description}</p>
+                  </div>
+                </motion.div>
               ))}
             </div>
-            <p style={{ color: 'var(--text2)', fontSize: 14, marginTop: 32, textAlign: 'center', maxWidth: 500, margin: '32px auto 0' }}>
-              Power BI dashboards are currently in progress. Add screenshot exports to <code style={{ color: 'var(--teal)', fontFamily: 'var(--font-mono)', fontSize: 12 }}>public/images/dashboards/</code> to display them here.
-            </p>
           </motion.div>
         )}
       </div>
